@@ -1,3 +1,6 @@
+import 'menuui.dart';
+// ignore: unused_import
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -73,85 +76,3 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
   }
 }
-
-class MenuPage extends StatelessWidget {
-  get editingController => TextEditingController();
-  get editingController2 => TextEditingController();
-
-  void swapValues() {
-    final temp = editingController.text;
-
-    editingController.text = editingController2.text;
-    editingController2.text = temp;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {},
-                controller: editingController,
-                decoration: InputDecoration(
-                    labelText: "Pickup",
-                    hintText: "Pickup Location",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)))),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                onChanged: (value) {},
-                controller: editingController2,
-                decoration: InputDecoration(
-                    labelText: "Dropoff",
-                    hintText: "Dropoff Location",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)))),
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: swapValues,
-        tooltip: 'swap',
-        child: const Icon(Icons.swap_calls),
-      ),
-    );
-  }
-}
-
-class HistoryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[],
-        ),
-      ),
-    );
-  }
-}
-
-class AccountPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[],
-        ),
-      ),
-    );
-  }
-}
-//Need to swap text fields

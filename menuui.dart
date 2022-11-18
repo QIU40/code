@@ -8,8 +8,8 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPage extends State<MenuPage> {
-  get editingController => TextEditingController();
-  get editingController2 => TextEditingController();
+  var editingController = TextEditingController();
+  var editingController2 = TextEditingController();
 
   swapValues() {
     final temp = editingController.text;
@@ -23,6 +23,8 @@ class _MenuPage extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: 300,
+        height: 200,
         child: Column(
           children: <Widget>[
             Padding(
@@ -36,6 +38,12 @@ class _MenuPage extends State<MenuPage> {
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)))),
+              ),
+            ),
+            Positioned(
+              child: TextButton(
+                onPressed: swapValues,
+                child: const Text("swap"),
               ),
             ),
             Padding(
@@ -53,11 +61,6 @@ class _MenuPage extends State<MenuPage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: swapValues,
-        tooltip: 'swap',
-        child: const Icon(Icons.swap_calls),
       ),
     );
   }

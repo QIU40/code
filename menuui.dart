@@ -27,8 +27,9 @@ class _MenuPage extends State<MenuPage> {
         height: 200,
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            Positioned(
+              top: 110,
+              left: 10,
               child: TextField(
                 onChanged: (value) {},
                 controller: editingController,
@@ -41,13 +42,16 @@ class _MenuPage extends State<MenuPage> {
               ),
             ),
             Positioned(
+              top: 50,
+              right: 20,
               child: TextButton(
                 onPressed: swapValues,
                 child: const Text("swap"),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            Positioned(
+              top: 110,
+              left: 10,
               child: TextField(
                 onChanged: (value) {},
                 controller: editingController2,
